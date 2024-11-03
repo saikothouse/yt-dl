@@ -61,7 +61,7 @@ const Features: React.FC = () => {
         <FeatureItem>
           <FeatureIcon><FaVideo /></FeatureIcon>
           <FeatureTitle>High-Quality Video Previews</FeatureTitle>
-          <FeatureDescription>Preview videos in high quality before downloading them to ensure they meet your needs.</FeatureItem>
+          <FeatureDescription>Preview videos in high quality before downloading them to ensure they meet your needs.</FeatureDescription>
         </FeatureItem>
         <FeatureItem>
           <FeatureIcon><FaHighlighter /></FeatureIcon>
