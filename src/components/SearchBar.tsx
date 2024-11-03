@@ -6,11 +6,15 @@ const SearchBarContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const InputWrapper = styled.div`
   position: relative;
-  width: 60%;
+  width: 100%;
+  max-width: 600px;
 `;
 
 const SearchIcon = styled.div`
@@ -28,6 +32,10 @@ const Input = styled.input`
   border: 1px solid #ddd;
   border-radius: 30px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 const Button = styled.button`
@@ -40,6 +48,11 @@ const Button = styled.button`
   border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 `;
 
 interface SearchBarProps {
