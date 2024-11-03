@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { FaSearch } from 'react-icons/fa';
 
 const SearchBarContainer = styled.div`
   display: flex;
@@ -7,16 +8,38 @@ const SearchBarContainer = styled.div`
   margin-top: 20px;
 `;
 
-const Input = styled.input`
-  padding: 10px;
+const InputWrapper = styled.div`
+  position: relative;
   width: 60%;
+`;
+
+const SearchIcon = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+`;
+
+const Input = styled.input`
+  padding: 10px 40px 10px 30px;
+  width: 100%;
   font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 `;
 
 const Button = styled.button`
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 16px;
   margin-left: 10px;
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 `;
 
 interface SearchBarProps {
@@ -32,12 +55,17 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <SearchBarContainer>
-      <Input 
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search YouTube videos..."
-      />
+      <InputWrapper>
+        <SearchIcon>
+          <FaSearch />
+        </SearchIcon>
+        <Input 
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search YouTube videos..."
+        />
+      </InputWrapper>
       <Button onClick={handleSearch}>Search</Button>
     </SearchBarContainer>
   );
