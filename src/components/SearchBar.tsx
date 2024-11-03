@@ -6,12 +6,7 @@ const SearchBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  padding: 0 20px;
   width: 90%;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 const InputWrapper = styled.div`
