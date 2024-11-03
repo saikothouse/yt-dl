@@ -4,6 +4,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
+import About from './components/About';
+import Features from './components/Features';
+import FAQ from './components/FAQ';
 
 interface Video {
   id: {
@@ -39,6 +42,9 @@ const App: React.FC = () => {
       <Header />
       <SearchBar onSearch={handleSearch} />
       <VideoList videos={videos} />
+      <About />
+      <Features />
+      <FAQ />
       <Footer />
     </div>
   );
