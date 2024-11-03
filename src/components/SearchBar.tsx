@@ -8,7 +8,7 @@ const SearchBarContainer = styled.div`
   align-items: center;
   margin-top: 20px;
   padding: 0 20px;
-  width: 100%;
+  width: 80%;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
