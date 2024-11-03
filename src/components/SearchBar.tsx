@@ -29,7 +29,7 @@ const SearchIcon = styled.div`
 
 const Input = styled.input`
   padding: 10px 40px 10px 30px;
-  width: 100%;
+  width: 90%;
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 30px;
