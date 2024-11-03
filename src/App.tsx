@@ -8,7 +8,6 @@ import About from './components/About';
 import Features from './components/Features';
 import FAQ from './components/FAQ';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
 import Contact from './components/Contact';
 import Layout from './components/Layout';
 
@@ -46,7 +45,6 @@ const App: React.FC = () => {
       <Header />
       <Navbar />
       <Layout>
-        <Hero />
         <SearchBar onSearch={handleSearch} />
         <VideoList videos={videos} />
         <About />
