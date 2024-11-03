@@ -8,6 +8,7 @@ const SearchBarContainer = styled.div`
   align-items: center;
   margin-top: 20px;
   padding: 0 20px;
+  width: 100%;
 `;
 
 const InputWrapper = styled.div`
