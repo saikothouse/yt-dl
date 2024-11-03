@@ -7,8 +7,6 @@ const SearchBarContainer = styled.div`
   justify-content: center;
   margin-top: 20px;
   padding: 0 20px;
-  width: 100%;
-  box-sizing: border-box;
 `;
 
 const InputWrapper = styled.div`
@@ -32,9 +30,8 @@ const Input = styled.input`
   border: 1px solid #ddd;
   border-radius: 30px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: 600px) {
-    font-size: 14px;
+  @media (max-width: 768px) {
+    padding: 10px 30px 10px 30px;
   }
 `;
 
@@ -48,10 +45,10 @@ const Button = styled.button`
   border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    padding: 10px 15px;
     font-size: 14px;
-    padding: 8px 16px;
+    margin-left: 5px;
   }
 `;
 
