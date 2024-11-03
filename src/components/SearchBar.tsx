@@ -4,7 +4,8 @@ import { FaSearch } from 'react-icons/fa';
 
 const SearchBarContainer = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
   padding: 0 20px;
 `;
@@ -38,7 +39,7 @@ const Input = styled.input`
 const Button = styled.button`
   padding: 10px 20px;
   font-size: 16px;
-  margin-left: 10px;
+  margin-top: 10px;
   background-color: #61dafb;
   color: white;
   border: none;
@@ -48,7 +49,7 @@ const Button = styled.button`
   @media (max-width: 768px) {
     padding: 10px 15px;
     font-size: 14px;
-    margin-left: 5px;
+    margin-top: 5px;
   }
 `;
 
