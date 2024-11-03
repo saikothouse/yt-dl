@@ -47,7 +47,6 @@ const App: React.FC = () => {
         <Features />
         <FAQ />
         <Contact />
-      </Layout>
       <Footer />
     </div>
   );
