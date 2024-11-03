@@ -1,5 +1,6 @@
+// src/App.tsx
 import React, { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -43,24 +44,26 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
+    <Router>
       <Header />
       <Navbar />
       <Layout>
-        <Switch>
-          <Route path="/" exact>
-            <Hero />
-            <SearchBar onSearch={handleSearch} />
-            <VideoList videos={videos} />
-          </Route>
-          <Route path="/about" component={About} />
-          <Route path="/features" component={Features} />
-          <Route path="/faq" component={FAQ} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <SearchBar onSearch={handleSearch} />
+              <VideoList videos={videos} />
+            </>
+          } />
+          <Route path="/about" element={<About />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </Layout>
       <Footer />
-    </div>
+    </Router>
   );
 };
 
