@@ -1,6 +1,4 @@
-// src/App.tsx
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -44,26 +42,20 @@ const App: React.FC = () => {
   };
 
   return (
-    <Router>
+    <div>
       <Header />
       <Navbar />
       <Layout>
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <SearchBar onSearch={handleSearch} />
-              <VideoList videos={videos} />
-            </>
-          } />
-          <Route path="/about" element={<About />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Hero />
+        <SearchBar onSearch={handleSearch} />
+        <VideoList videos={videos} />
+        <About />
+        <Features />
+        <FAQ />
+        <Contact />
       </Layout>
       <Footer />
-    </Router>
+    </div>
   );
 };
 
