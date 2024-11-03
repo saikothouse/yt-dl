@@ -8,7 +8,6 @@ import About from './components/About';
 import Features from './components/Features';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
-import Layout from './components/Layout';
 
 interface Video {
   id: {
@@ -42,7 +41,6 @@ const App: React.FC = () => {
   return (
     <div>
       <Header />
-      <Layout>
         <SearchBar onSearch={handleSearch} />
         <VideoList videos={videos} />
         <About />
