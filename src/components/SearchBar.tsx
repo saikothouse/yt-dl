@@ -16,7 +16,7 @@ const SearchBarContainer = styled.div`
 
 const InputWrapper = styled.div`
   position: relative;
-  width: 100%;
+  width: 90%;
 `;
 
 const SearchIcon = styled.div`
