@@ -10,6 +10,9 @@ const HeaderContainer = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 `;
 
 const Logo = styled.div`
@@ -26,12 +29,18 @@ const LogoIcon = styled(FaYoutube)`
 const Title = styled.h1`
   font-size: 2.5em;
   margin: 0;
+  @media (max-width: 768px) {
+    font-size: 2em;
+  }
 `;
 
 const Subtitle = styled.h2`
   font-size: 1.5em;
   color: #61dafb;
   margin: 10px 0 0;
+  @media (max-width: 768px) {
+    font-size: 1.2em;
+  }
 `;
 
 const Header: React.FC = () => {
