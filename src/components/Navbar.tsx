@@ -49,18 +49,27 @@ const MobileIcon = styled.div`
   }
 `;
 
-const MobileMenu = styled.div`
+const DropdownMenu = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: #282c34;
   position: absolute;
   top: 60px;
-  right: 20px;
-  background-color: #282c34;
+  right: 10px;
+  width: 150px;
   border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+`;
+
+const DropdownLink = styled(Link)`
+  color: white;
   padding: 10px;
-  width: 200px;
-  z-index: 1001;
+  text-decoration: none;
+  font-size: 1em;
+
+  &:hover {
+    background-color: #61dafb;
+  }
 `;
 
 const Navbar: React.FC = () => {
@@ -84,13 +93,13 @@ const Navbar: React.FC = () => {
         <FaBars />
       </MobileIcon>
       {isMobileMenuOpen && (
-        <MobileMenu>
-          <NavLink to="/" onClick={handleMobileMenuToggle}>Home</NavLink>
-          <NavLink to="/about" onClick={handleMobileMenuToggle}>About</NavLink>
-          <NavLink to="/features" onClick={handleMobileMenuToggle}>Features</NavLink>
-          <NavLink to="/faq" onClick={handleMobileMenuToggle}>FAQ</NavLink>
-          <NavLink to="/contact" onClick={handleMobileMenuToggle}>Contact</NavLink>
-        </MobileMenu>
+        <DropdownMenu>
+          <DropdownLink to="/" onClick={handleMobileMenuToggle}>Home</DropdownLink>
+          <DropdownLink to="/about" onClick={handleMobileMenuToggle}>About</DropdownLink>
+          <DropdownLink to="/features" onClick={handleMobileMenuToggle}>Features</DropdownLink>
+          <DropdownLink to="/faq" onClick={handleMobileMenuToggle}>FAQ</DropdownLink>
+          <DropdownLink to="/contact" onClick={handleMobileMenuToggle}>Contact</DropdownLink>
+        </DropdownMenu>
       )}
     </NavbarContainer>
   );
