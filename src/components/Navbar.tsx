@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FaBars, FaCaretDown } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 
 const NavbarContainer = styled.nav`
   width: 100%;
@@ -40,37 +40,6 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Dropdown = styled.div`
-  position: relative;
-  display: inline-block;
-`;
-
-const DropdownContent = styled.div`
-  display: none;
-  position: absolute;
-  background-color: #282c34;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 5px;
-  overflow: hidden;
-
-  ${Dropdown}:hover & {
-    display: block;
-  }
-`;
-
-const DropdownLink = styled(Link)`
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-
-  &:hover {
-    background-color: #575757;
-  }
-`;
-
 const MobileIcon = styled.div`
   display: none;
   @media (max-width: 768px) {
@@ -78,6 +47,20 @@ const MobileIcon = styled.div`
     font-size: 1.5em;
     cursor: pointer;
   }
+`;
+
+const MobileMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #282c34;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  z-index: 1001;
 `;
 
 const Navbar: React.FC = () => {
@@ -95,26 +78,19 @@ const Navbar: React.FC = () => {
         <NavLink to="/about">About</NavLink>
         <NavLink to="/features">Features</NavLink>
         <NavLink to="/faq">FAQ</NavLink>
-        <Dropdown>
-          <NavLink to="#">More <FaCaretDown /></NavLink>
-          <DropdownContent>
-            <DropdownLink to="/contact">Contact</DropdownLink>
-            <DropdownLink to="/privacy">Privacy Policy</DropdownLink>
-          </DropdownContent>
-        </Dropdown>
+        <NavLink to="/contact">Contact</NavLink>
       </NavLinks>
       <MobileIcon onClick={handleMobileMenuToggle}>
         <FaBars />
       </MobileIcon>
       {isMobileMenuOpen && (
-        <NavLinks style={{ flexDirection: 'column', position: 'absolute', top: '60px', right: '10px', backgroundColor: '#282c34', borderRadius: '5px', padding: '10px' }}>
+        <MobileMenu>
           <NavLink to="/" onClick={handleMobileMenuToggle}>Home</NavLink>
           <NavLink to="/about" onClick={handleMobileMenuToggle}>About</NavLink>
           <NavLink to="/features" onClick={handleMobileMenuToggle}>Features</NavLink>
           <NavLink to="/faq" onClick={handleMobileMenuToggle}>FAQ</NavLink>
-          <DropdownLink to="/contact" onClick={handleMobileMenuToggle}>Contact</DropdownLink>
-          <DropdownLink to="/privacy" onClick={handleMobileMenuToggle}>Privacy Policy</DropdownLink>
-        </NavLinks>
+          <NavLink to="/contact" onClick={handleMobileMenuToggle}>Contact</NavLink>
+        </MobileMenu>
       )}
     </NavbarContainer>
   );
