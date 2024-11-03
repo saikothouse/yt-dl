@@ -8,7 +8,7 @@ const AboutContainer = styled.div`
   border-radius: 10px;
   margin: 20px auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  max-width: 100%;
   @media (max-width: 768px) {
     padding: 20px;
   }
