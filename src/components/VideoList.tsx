@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaPlay, FaDownload } from 'react-icons/fa';
-import axios from 'axios';
 
 const VideoListContainer = styled.div`
   display: flex;
@@ -18,6 +17,10 @@ const VideoItem = styled.div`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   text-align: center;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 10px 0;
+  }
 `;
 
 const Thumbnail = styled.img`
